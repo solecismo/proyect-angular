@@ -17,9 +17,6 @@ export class HomeComponent implements OnInit {
     this.userService.getAll().pipe(first()).subscribe(
       users => { 
         this.users = users; 
-      },
-      error=>{
-        console.log(error);
       }
     );
   }

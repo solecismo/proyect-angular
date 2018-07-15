@@ -3,7 +3,12 @@
 <div>
     Users from secure api end point:
     <ul>
-        <li *ngFor="let user of users">{{user.id}} {{user.email}}</li>
+        <li *ngFor="let user of users.rows">{{user.id}} {{user.email}}</li>
     </ul>
+    <h2>count {{users.count}}</h2>
 </div>
 <p><a [routerLink]="['/login']">Logout</a></p>
+
+<ng-template [ngxPermissionsOnly]="['ADMIN']">
+    <div>You can see this text congrats</div>
+</ng-template>

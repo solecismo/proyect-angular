@@ -9,6 +9,8 @@ import { HomeComponent } from './home/home.component';
 import { ReactiveFormsModule }    from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
+import { NgxPermissionsModule } from 'ngx-permissions';
+
 // used to create fake backend
 import { fakeBackendProvider } from './_helpers';
 import { routing }        from './app.routing';
@@ -27,7 +29,8 @@ import { LoginComponent } from './login';
     LayoutModule,
     routing,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPermissionsModule.forRoot()
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
