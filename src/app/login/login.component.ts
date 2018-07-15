@@ -4,7 +4,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first  } from 'rxjs/operators';
 import { AuthenticationService } from '../_services';
 
-@Component({templateUrl: 'login.component.html'})
+@Component({
+        selector: 'pa-login',
+        templateUrl: 'login.component.html',
+        styleUrls: ['./login.component.sass']
+    })
 export class LoginComponent implements OnInit {
     loginForm: FormGroup;
     loading = false;

@@ -8,9 +8,11 @@ import { HomeComponent } from './home/home.component';
 
 import { ReactiveFormsModule }    from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-
+//material
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { MaterialModule } from './material/material.module';
+// permission
 import { NgxPermissionsModule } from 'ngx-permissions';
-
 // used to create fake backend
 import { fakeBackendProvider } from './_helpers';
 import { routing }        from './app.routing';
@@ -30,7 +32,9 @@ import { LoginComponent } from './login';
     routing,
     HttpClientModule,
     ReactiveFormsModule,
-    NgxPermissionsModule.forRoot()
+    NgxPermissionsModule.forRoot(),
+    BrowserAnimationsModule,
+    MaterialModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
