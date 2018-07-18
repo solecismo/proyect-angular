@@ -4,7 +4,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first  } from 'rxjs/operators';
 import { AuthenticationService } from '../_services';
 
-@Component({templateUrl: 'login.component.html'})
+@Component({
+    selector: 'pa-login',
+    templateUrl: './login.component.html',
+    styleUrls: ['./login.component.sass']
+  })
 export class LoginComponent implements OnInit {
     loginForm: FormGroup;
     loading = false;
@@ -36,12 +40,11 @@ export class LoginComponent implements OnInit {
 
     onSubmit() {
         this.submitted = true;
-
+        
         // stop here if form is invalid
         if (this.loginForm.invalid) {
             return;
         }
-
 
         this.loading = true;
         this.authenticationService.login(this.f.email.value, this.f.password.value)
@@ -51,7 +54,7 @@ export class LoginComponent implements OnInit {
                     this.router.navigate([this.returnUrl]);
                 },
                 error => {
-                    this.error = 'Email or password is incorrect',
+                    this.error = 'Email or Contraseña es incorrecto',
                     this.loading = false;
                 });
     }

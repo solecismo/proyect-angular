@@ -22,7 +22,7 @@ export class AuthenticationService {
                 // login successful if there's a jwt token in the response
                 if (res && res.token) {
                     // store email and jwt token in local storage to keep user logged in between page refreshes
-                    localStorage.setItem('currentUser', JSON.stringify({ email, token: res.token }));
+                    localStorage.setItem('currentUser', JSON.stringify({ email, token: res.token, role: res.user.role }));
                     //assign role
                     const perm = [res.user.role.toString().toUpperCase()];
                     this.permissionsService.loadPermissions(perm);
