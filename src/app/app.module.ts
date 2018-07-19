@@ -17,13 +17,17 @@ import { routing }        from './app.routing';
 import { JwtInterceptor, ErrorInterceptor } from './_helpers';
 import { LoginComponent } from './login';
 import { NavComponent } from './nav/nav.component';
+import { ProfileComponent } from './profile/profile.component'
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     LoginComponent,
-    NavComponent
+    NavComponent,
+    ProfileComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

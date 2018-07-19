@@ -14,7 +14,6 @@ export class AuthGuard implements CanActivate {
             //assign role
             const perm = [jsonData.role.toUpperCase()];
             this.permissionsService.loadPermissions(perm);
-        
             return true;
         }
 
