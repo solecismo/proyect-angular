@@ -1,5 +1,35 @@
 <pa-nav></pa-nav>
+<section class="container mt-4 mb-4">
+    <div class="container">
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <div class="d-flex flex-row border rounded">
+                    <div class="p-0 w-25">
+                        <img src="{{currentUser.picture}}" class="img-thumbnail border-0" />
+                    </div>
+                    <div class="pl-3 pt-2 pr-2 pb-2 w-75 border-left">
+                        <h4 class="text-primary">{{currentUser.name}}</h4>
+                        <h5 class="text-info">{{currentUser.email}}</h5>
+                        <ul class="m-0 float-left" style="list-style: none; margin:0; padding: 0">
+                            <li><i class="material-icons">portrait</i> {{currentUser.role}}</li>
+                            <li><i class="material-icons">watch</i> {{currentUser.createdAt | date}}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="row">
+                    <p class="text-left m-0"><a [routerLink]="['/profile/edit']" class="btn btn-primary"><i class="fa fa-user" aria-hidden="true"></i> Ediar perfil</a></p>
 
-<p>
-    profile works!
-</p>
+                </div>
+                <br>
+                <div class="row">
+                    <p class="text-left m-0"><a href="#" class="btn btn-danger"><i class="fa fa-cog" aria-hidden="true"></i> Cambiar contraseña</a></p>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>

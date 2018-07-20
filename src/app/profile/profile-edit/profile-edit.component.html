@@ -1,0 +1,54 @@
+<pa-nav></pa-nav>
+
+<div class="container">
+    <br>
+    <div class="row justify-content">
+        <div class="col-md-12">
+            <div class="card">
+                <header class="card-header">
+
+                    <h4 class="card-title mt-2">Editar Perfil {{url}}</h4>
+                </header>
+                <form [formGroup]="profileEditForm" (ngSubmit)="onSubmit()">
+                    <article class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Nombre</label>
+                                    <input type="text" class="form-control" placeholder="nombre" formControlName="name" [(ngModel)]="currentUser.name">
+
+                                </div>
+                            </div>
+                            <div class="col-md-6" style="text-align: -webkit-center;" hidden="true">
+                                <div class="card" style="width: 10rem; height: 10rem;">
+                                    <img class="card-img-top" [src]="url" alt="Card image cap">
+                                </div>
+                                <div class="upload-btn-wrapper">
+                                    <button class="upload">Subir imagen</button>
+                                    <input type="file" name="file" id="file" class="inputfile" (change)="readUrl($event)" />
+                                </div>
+                            </div>
+                            <div class="col-md-4"></div>
+                            <div class="col-md-4">
+                                <!-- form-group button.// -->
+                                <div class="form-group">
+                                    <br><br>
+                                    <button [disabled]="loading" class="btn btn-primary btn-block">Actualizar</button>
+                                    <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="
+                                    />
+                                </div>
+                            </div>
+                            <div class="col-md-4"></div>
+                        </div>
+                    </article>
+                </form>
+
+            </div>
+            <!-- card.// -->
+        </div>
+        <!-- col.//-->
+
+    </div>
+    <!-- row.//-->
+</div>
+<!--container end.//-->

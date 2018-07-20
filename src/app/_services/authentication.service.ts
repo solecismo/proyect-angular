@@ -15,7 +15,7 @@ export class AuthenticationService {
             'Authorization': 'Basic '+btoa(email+':'+password)
         });
 
-        const params = new HttpParams().set('access_token', 'koh83JGFCpfjyE9dZcHMlDBkXvlnACkX');         
+        const params = new HttpParams().set('access_token', environment.access_token);         
 
         return this.http.post<any>(environment.apiUrl+'/auth', params, {headers: headers} )
             .pipe(map((res:any) => {

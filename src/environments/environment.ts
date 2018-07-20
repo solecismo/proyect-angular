@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:9000'
+  apiUrl: 'http://localhost:9000',
+  access_token: 'koh83JGFCpfjyE9dZcHMlDBkXvlnACkX'
 };
 
 /*

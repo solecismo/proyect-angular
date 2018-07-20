@@ -6,11 +6,10 @@ import { AppComponent } from './app.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { HomeComponent } from './home/home.component';
 
-import { ReactiveFormsModule }    from '@angular/forms';
+import { ReactiveFormsModule, FormsModule }    from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { NgxPermissionsModule } from 'ngx-permissions';
-
 // used to create fake backend
 import { fakeBackendProvider } from './_helpers';
 import { routing }        from './app.routing';
@@ -19,6 +18,7 @@ import { LoginComponent } from './login';
 import { NavComponent } from './nav/nav.component';
 import { ProfileComponent } from './profile/profile.component'
 import { RegisterComponent } from './register/register.component';
+import { ProfileEditComponent } from './profile/profile-edit/profile-edit.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +27,8 @@ import { RegisterComponent } from './register/register.component';
     LoginComponent,
     NavComponent,
     ProfileComponent,
-    RegisterComponent
+    RegisterComponent,
+    ProfileEditComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +37,8 @@ import { RegisterComponent } from './register/register.component';
     routing,
     HttpClientModule,
     ReactiveFormsModule,
-    NgxPermissionsModule.forRoot()
+    NgxPermissionsModule.forRoot(),
+    FormsModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
