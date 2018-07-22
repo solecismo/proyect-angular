@@ -42,5 +42,20 @@ export class UserService {
         return this.http.put<any>(environment.apiUrl+'/users/'+id, params, {headers: headers} );
     }
 
+    putUpdatePassword(id:string, email:string, password:string, passwordNew:string){
+        // remove user from local storage to log user out
+        localStorage.removeItem('currentUser');
+        let headers: HttpHeaders = new HttpHeaders({
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'Authorization': 'Basic '+btoa(email+':'+password)
+        });
+
+        const params = new HttpParams()        
+            .set('password', passwordNew);    
+            
+        return this.http.put<any>(environment.apiUrl+'/users/'+id+'/password', params, {headers: headers} );
+        
+    }
+
     
 }

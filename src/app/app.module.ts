@@ -19,6 +19,7 @@ import { NavComponent } from './nav/nav.component';
 import { ProfileComponent } from './profile/profile.component'
 import { RegisterComponent } from './register/register.component';
 import { ProfileEditComponent } from './profile/profile-edit/profile-edit.component';
+import { ProfileEditPasswordComponent } from './profile/profile-edit-password/profile-edit-password.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ProfileEditComponent } from './profile/profile-edit/profile-edit.compon
     NavComponent,
     ProfileComponent,
     RegisterComponent,
-    ProfileEditComponent
+    ProfileEditComponent,
+    ProfileEditPasswordComponent
   ],
   imports: [
     BrowserModule,
