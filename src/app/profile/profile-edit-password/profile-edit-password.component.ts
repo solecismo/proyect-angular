@@ -71,10 +71,10 @@ export class ProfileEditPasswordComponent implements OnInit {
 
     this.loading = true;
 
-    this.userService.putUpdatePassword(this.currentUser.id,this.currentUser.email, this.f.password.value, this.f.passwordNew.value)
+    this.userService.putUpdatePassword(this.currentUser['id'],this.currentUser['email'], this.f.password.value, this.f.passwordNew.value)
         .subscribe(
             data => {
-              this.authenticationService.login(this.currentUser.email, this.f.passwordNew.value)
+              this.authenticationService.login(this.currentUser['email'], this.f.passwordNew.value)
               .pipe(first())
               .subscribe(
                   data => {

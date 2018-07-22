@@ -9,13 +9,17 @@ import { LoginComponent } from './login';
 import { AuthGuard } from './_guards';
 
 const appRoutes: Routes = [
-    { path: '', component: HomeComponent, canActivate: [AuthGuard] },
-    { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
-    { path: 'profile/edit', component: ProfileEditComponent, canActivate: [AuthGuard] },
-    { path: 'profile/editPassword', component: ProfileEditPasswordComponent, canActivate: [AuthGuard] },
+    
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
 
+    { path: '', component: HomeComponent, canActivate: [AuthGuard] },
+
+    //profile
+    { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
+    { path: 'profile/edit', component: ProfileEditComponent, canActivate: [AuthGuard] },
+    { path: 'profile/editPassword', component: ProfileEditPasswordComponent, canActivate: [AuthGuard] },
+    
     // otherwise redirect to home
     { path: '**', redirectTo: '' }
 ];

@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { HomeComponent } from './home/home.component';
 
 import { ReactiveFormsModule, FormsModule }    from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -14,6 +13,8 @@ import { NgxPermissionsModule } from 'ngx-permissions';
 import { fakeBackendProvider } from './_helpers';
 import { routing }        from './app.routing';
 import { JwtInterceptor, ErrorInterceptor } from './_helpers';
+
+import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login';
 import { NavComponent } from './nav/nav.component';
 import { ProfileComponent } from './profile/profile.component'
@@ -26,9 +27,9 @@ import { ProfileEditPasswordComponent } from './profile/profile-edit-password/pr
     AppComponent,
     HomeComponent,
     LoginComponent,
+    RegisterComponent,
     NavComponent,
     ProfileComponent,
-    RegisterComponent,
     ProfileEditComponent,
     ProfileEditPasswordComponent
   ],
